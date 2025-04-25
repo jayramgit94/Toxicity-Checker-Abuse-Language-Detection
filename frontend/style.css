@@ -1,0 +1,151 @@
+/* Reset default spacing and fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body styling */
+body {
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Main container */
+.container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.container h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #4c83ff;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Textarea input */
+textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 16px;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4c83ff;
+}
+
+/* Button */
+button {
+  background-color: #4c83ff;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(76, 131, 255, 0.3);
+}
+
+button:hover {
+  background-color: #3b6fd8;
+  transform: scale(1.05);
+}
+
+/* Result section */
+#result {
+  margin-top: 30px;
+  font-size: 16px;
+  text-align: left;
+  background: #f9f9f9;
+  border-left: 5px solid #4c83ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #444;
+  animation: slideFade 0.4s ease-in-out;
+  white-space: pre-wrap;
+}
+
+/* Color changes for different results */
+#result.green {
+  border-left-color: #2ecc71;
+  color: #2ecc71;
+}
+
+#result.red {
+  border-left-color: #e74c3c;
+  color: #e74c3c;
+}
+
+#result.gray {
+  border-left-color: #888;
+  color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  textarea {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
